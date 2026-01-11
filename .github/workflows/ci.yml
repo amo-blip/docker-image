@@ -14,9 +14,9 @@ on:
 permissions:
   packages: write
 
-concurrency:
-  group: ${{ github.ref }}
-  cancel-in-progress: true
+#concurrency:
+ # group: ${{ github.ref }}
+  #cancel-in-progress: true
 
 env:
   REGISTRY: ghcr.io
@@ -31,6 +31,14 @@ jobs:
       packages: write
 
     steps:
+    - name: Free Disk Space (Ubuntu)
+      uses: jlumbroso/free-disk-space@main
+      with:
+        tool-cache: true
+        android: true
+        dotnet: true
+        haskell: true
+
     - name: Checkout repository
       uses: actions/checkout@v4
 
