@@ -26,8 +26,6 @@ jobs:
   build-and-push:
     name: Build ubuntu
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/amo-blip/docker-image/image-build:v1.0.0
     permissions:
       contents: read
       packages: write
