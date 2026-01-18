@@ -42,7 +42,7 @@ ENV ZEPHYR_TOOLCHAIN_VARIANT=zephyr
 ARG OPENOCD_VERSION=v0.12.0
 
 RUN apt-get update && apt-get install -y \
-    git autoconf libtool make pkg-config libusb-1.0-0-dev \
+    git autoconf libtool make pkg-config libusb-1.0-0-dev usbutils\
     && git clone --depth 1 --branch ${OPENOCD_VERSION} https://github.com/openocd-org/openocd.git
 
 WORKDIR /openocd
